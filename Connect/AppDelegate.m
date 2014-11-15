@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "ContainerViewController.h"
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
@@ -37,13 +37,7 @@
                                                          UIRemoteNotificationTypeAlert |
                                                          UIRemoteNotificationTypeSound)];
     }
-	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	MainViewController *mainViewController = [[MainViewController alloc] init];
-	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-	self.window.rootViewController = nav;
-	[self.window makeKeyAndVisible];
-	return YES;
-	
+
     return YES;
 }
 

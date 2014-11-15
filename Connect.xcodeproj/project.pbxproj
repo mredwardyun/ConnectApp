@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		5A2518241A170F1600FB15D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2518231A170F1600FB15D9 /* main.m */; };
 		5A2518271A170F1600FB15D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2518261A170F1600FB15D9 /* AppDelegate.m */; };
-		5A25182D1A170F1600FB15D9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A25182C1A170F1600FB15D9 /* MainViewController.m */; };
+		5A25182D1A170F1600FB15D9 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A25182C1A170F1600FB15D9 /* ContainerViewController.m */; };
 		5A2518321A170F1600FB15D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A2518311A170F1600FB15D9 /* Images.xcassets */; };
 		5A2518351A170F1600FB15D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2518331A170F1600FB15D9 /* LaunchScreen.xib */; };
 		5A2518411A170F1600FB15D9 /* ConnectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2518401A170F1600FB15D9 /* ConnectTests.m */; };
 		9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A268BD51A172DBA004F23D5 /* PageContentViewController.m */; };
+		9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A52581C1A17A40B00945A37 /* Storyboard.storyboard */; };
+		9A5258201A17A53800945A37 /* CenterPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */; };
 		EC7795161A1718A000A82581 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7795151A1718A000A82581 /* Parse.framework */; };
 		EC7795181A1718AD00A82581 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7795171A1718AD00A82581 /* Bolts.framework */; };
 		EC77951A1A1718C400A82581 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7795191A1718C400A82581 /* ParseFacebookUtils.framework */; };
@@ -45,8 +47,8 @@
 		5A2518231A170F1600FB15D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A2518251A170F1600FB15D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5A2518261A170F1600FB15D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5A25182B1A170F1600FB15D9 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		5A25182C1A170F1600FB15D9 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		5A25182B1A170F1600FB15D9 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		5A25182C1A170F1600FB15D9 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		5A2518311A170F1600FB15D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5A2518341A170F1600FB15D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5A25183A1A170F1600FB15D9 /* ConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +56,9 @@
 		5A2518401A170F1600FB15D9 /* ConnectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectTests.m; sourceTree = "<group>"; };
 		9A268BD41A172DBA004F23D5 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		9A268BD51A172DBA004F23D5 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		9A52581C1A17A40B00945A37 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		9A52581E1A17A53800945A37 /* CenterPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterPageContentViewController.h; sourceTree = "<group>"; };
+		9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterPageContentViewController.m; sourceTree = "<group>"; };
 		EC7795151A1718A000A82581 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		EC7795171A1718AD00A82581 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		EC7795191A1718C400A82581 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -136,10 +141,13 @@
 			children = (
 				5A2518251A170F1600FB15D9 /* AppDelegate.h */,
 				5A2518261A170F1600FB15D9 /* AppDelegate.m */,
-				5A25182B1A170F1600FB15D9 /* MainViewController.h */,
-				5A25182C1A170F1600FB15D9 /* MainViewController.m */,
+				5A25182B1A170F1600FB15D9 /* ContainerViewController.h */,
+				5A25182C1A170F1600FB15D9 /* ContainerViewController.m */,
 				9A268BD41A172DBA004F23D5 /* PageContentViewController.h */,
 				9A268BD51A172DBA004F23D5 /* PageContentViewController.m */,
+				9A52581E1A17A53800945A37 /* CenterPageContentViewController.h */,
+				9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */,
+				9A52581C1A17A40B00945A37 /* Storyboard.storyboard */,
 				5A2518311A170F1600FB15D9 /* Images.xcassets */,
 				5A2518331A170F1600FB15D9 /* LaunchScreen.xib */,
 				5A2518211A170F1600FB15D9 /* Supporting Files */,
@@ -255,6 +263,7 @@
 			files = (
 				5A2518351A170F1600FB15D9 /* LaunchScreen.xib in Resources */,
 				5A2518321A170F1600FB15D9 /* Images.xcassets in Resources */,
+				9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +284,8 @@
 				5A2518271A170F1600FB15D9 /* AppDelegate.m in Sources */,
 				5A2518241A170F1600FB15D9 /* main.m in Sources */,
 				9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */,
-				5A25182D1A170F1600FB15D9 /* MainViewController.m in Sources */,
+				5A25182D1A170F1600FB15D9 /* ContainerViewController.m in Sources */,
+				9A5258201A17A53800945A37 /* CenterPageContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

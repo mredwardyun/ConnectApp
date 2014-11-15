@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController <UIPageViewControllerDataSource>
+@interface ContainerViewController : UIViewController <UIPageViewControllerDataSource>
 
 
 @end

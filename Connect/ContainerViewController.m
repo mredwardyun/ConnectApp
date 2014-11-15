@@ -1,23 +1,24 @@
 //
-//  MainViewController.m
+//  ContainerViewController.m
 //  Connect
 //
 //  Created by Liu on 11/14/14.
 //  Copyright (c) 2014 Liu. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "ContainerViewController.h"
 #import "PageContentViewController.h"
+#import "CenterPageContentViewController.h"
 
-static NSInteger const kMaxNumberOfViewControllers = 5;
+static NSInteger const kMaxNumberOfViewControllers = 3;
 
-@interface MainViewController ()
+@interface ContainerViewController ()
 
 @property (nonatomic) UIPageViewController *pageController;
 
 @end
 
-@implementation MainViewController
+@implementation ContainerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,7 +28,7 @@ static NSInteger const kMaxNumberOfViewControllers = 5;
 	self.pageController.dataSource = self;
 	[self.pageController.view setFrame:[self.view bounds]];
 	
-	PageContentViewController *viewControllerObject = [self viewControllerAtIndex:0];
+	PageContentViewController *viewControllerObject = [self viewControllerAtIndex:1];
 	
 	[self.pageController setViewControllers:@[viewControllerObject] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 	
@@ -48,7 +49,7 @@ static NSInteger const kMaxNumberOfViewControllers = 5;
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
 	NSInteger pageIndex = ((PageContentViewController *)viewController).pageIndex;
 	++pageIndex;
-	if (pageIndex > kMaxNumberOfViewControllers) {
+	if (pageIndex == kMaxNumberOfViewControllers) {
 		return nil;
 	} else {
 		return [self viewControllerAtIndex:pageIndex];
@@ -56,6 +57,12 @@ static NSInteger const kMaxNumberOfViewControllers = 5;
 }
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index {
+	if (index == 1) {
+		CenterPageContentViewController *centerPageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CenterPageViewController"];
+		centerPageContentViewController.pageIndex = 1;
+		return centerPageContentViewController;
+	}
+	
 	PageContentViewController *pageContentViewController = [[PageContentViewController alloc] init];
 	pageContentViewController.pageIndex = index;
 	
@@ -64,7 +71,18 @@ static NSInteger const kMaxNumberOfViewControllers = 5;
 	label.text = [NSString stringWithFormat:@"View controller %lu", index];
 	label.textAlignment = NSTextAlignmentCenter;
 	[pageContentViewController.view addSubview:label];
+	
 	return pageContentViewController;
+}
+
+- (void)displayModalViewController {
+	PageContentViewController *modalViewController = [[PageContentViewController alloc] init];
+	UILabel *label = [[UILabel alloc] initWithFrame:modalViewController.view.bounds];
+	label.backgroundColor = [UIColor greenColor];
+	label.text = @"Modal view controller";
+	label.textAlignment = NSTextAlignmentCenter;
+	[modalViewController.view addSubview:label];
+	[self.navigationController presentViewController:modalViewController animated:YES completion:nil];
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
@@ -72,7 +90,7 @@ static NSInteger const kMaxNumberOfViewControllers = 5;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-	return 0;
+	return 1;
 }
 
 @end
