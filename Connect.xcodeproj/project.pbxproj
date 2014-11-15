@@ -14,6 +14,8 @@
 		5A2518351A170F1600FB15D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2518331A170F1600FB15D9 /* LaunchScreen.xib */; };
 		5A2518411A170F1600FB15D9 /* ConnectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2518401A170F1600FB15D9 /* ConnectTests.m */; };
 		5A2518AB1A17CFC500FB15D9 /* PhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2518AA1A17CFC500FB15D9 /* PhoneNumberViewController.m */; };
+		5AAB18AD1A180E7A00088E72 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAB18AC1A180E7A00088E72 /* Accounts.framework */; };
+		5AAB18AF1A180E7F00088E72 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAB18AE1A180E7F00088E72 /* Social.framework */; };
 		9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A268BD51A172DBA004F23D5 /* PageContentViewController.m */; };
 		9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A52581C1A17A40B00945A37 /* Storyboard.storyboard */; };
 		9A5258201A17A53800945A37 /* CenterPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */; };
@@ -59,6 +61,8 @@
 		5A2518401A170F1600FB15D9 /* ConnectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectTests.m; sourceTree = "<group>"; };
 		5A2518A91A17CFC500FB15D9 /* PhoneNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberViewController.h; sourceTree = "<group>"; };
 		5A2518AA1A17CFC500FB15D9 /* PhoneNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberViewController.m; sourceTree = "<group>"; };
+		5AAB18AC1A180E7A00088E72 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		5AAB18AE1A180E7F00088E72 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9A268BD41A172DBA004F23D5 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		9A268BD51A172DBA004F23D5 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		9A52581C1A17A40B00945A37 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AAB18AF1A180E7F00088E72 /* Social.framework in Frameworks */,
+				5AAB18AD1A180E7A00088E72 /* Accounts.framework in Frameworks */,
 				9A76BC841A17C156005988BF /* ParseFacebookUtils.framework in Frameworks */,
 				EC77952E1A17194300A82581 /* SystemConfiguration.framework in Frameworks */,
 				EC77952C1A17193C00A82581 /* StoreKit.framework in Frameworks */,
@@ -117,6 +123,8 @@
 		5A2518151A170F1600FB15D9 = {
 			isa = PBXGroup;
 			children = (
+				5AAB18AE1A180E7F00088E72 /* Social.framework */,
+				5AAB18AC1A180E7A00088E72 /* Accounts.framework */,
 				9A76BC811A17C156005988BF /* Parse.framework */,
 				9A76BC821A17C156005988BF /* ParseFacebookUtils.framework */,
 				EC77952D1A17194300A82581 /* SystemConfiguration.framework */,

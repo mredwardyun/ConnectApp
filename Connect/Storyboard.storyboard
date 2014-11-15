@@ -107,7 +107,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z8-Io-v2G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z8-Io-v2G">
                                 <rect key="frame" x="126" y="82" width="68" height="30"/>
                                 <state key="normal" title="Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,7 +116,7 @@
                                     <action selector="fbLoginButtonPressed:" destination="ukv-F5-31Y" eventType="touchUpInside" id="7Yc-l2-FwM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L4-Yl-CAP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L4-Yl-CAP">
                                 <rect key="frame" x="109" y="188" width="103" height="30"/>
                                 <state key="normal" title="Phone Number">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,7 +125,7 @@
                                     <action selector="getUserPhoneNumber:" destination="ukv-F5-31Y" eventType="touchUpInside" id="KI9-vP-RaU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zck-8Y-DMP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zck-8Y-DMP">
                                 <rect key="frame" x="106" y="465" width="109" height="30"/>
                                 <state key="normal" title="Done Signing In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,8 +134,27 @@
                                     <segue destination="S21-om-P30" kind="modal" identifier="DoneSigningIn" id="8Mg-2g-U6Q"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipg-zm-wkU">
+                                <rect key="frame" x="137" y="274" width="46" height="30"/>
+                                <state key="normal" title="Twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterLogin:" destination="ukv-F5-31Y" eventType="touchUpInside" id="jLX-Qy-CQW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ljM-h3-cmg" firstAttribute="top" secondItem="zck-8Y-DMP" secondAttribute="bottom" constant="73" id="0aA-MH-U98"/>
+                            <constraint firstItem="3L4-Yl-CAP" firstAttribute="top" secondItem="9z8-Io-v2G" secondAttribute="bottom" constant="76" id="2Dh-dY-x0N"/>
+                            <constraint firstItem="Ipg-zm-wkU" firstAttribute="top" secondItem="3L4-Yl-CAP" secondAttribute="bottom" constant="56" id="50c-MJ-X4d"/>
+                            <constraint firstAttribute="centerX" secondItem="3L4-Yl-CAP" secondAttribute="centerX" constant="-0.5" id="AIt-cT-Edq"/>
+                            <constraint firstAttribute="centerX" secondItem="Ipg-zm-wkU" secondAttribute="centerX" id="X0n-e0-7h5"/>
+                            <constraint firstItem="9z8-Io-v2G" firstAttribute="top" secondItem="om1-TN-XTG" secondAttribute="bottom" constant="62" id="cLB-68-CLd"/>
+                            <constraint firstAttribute="centerX" secondItem="zck-8Y-DMP" secondAttribute="centerX" constant="-0.5" id="tan-qG-13k"/>
+                            <constraint firstAttribute="centerX" secondItem="9z8-Io-v2G" secondAttribute="centerX" id="x1K-Tb-ZHO"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="9z8-Io-v2G" id="hF2-JI-hB4"/>

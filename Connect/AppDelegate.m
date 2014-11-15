@@ -22,6 +22,8 @@
     [Parse setApplicationId:@"7Wljpzbqeo8MV30XjHCMXPvETdKET1JkYG0hjRBo"
                   clientKey:@"Z4RtU3Bre5HSpAzCmz038AVR6JT2iIs4VMPeZZlS"];
 	[PFFacebookUtils initializeFacebook];
+    [PFTwitterUtils initializeWithConsumerKey:@"krLAz34Uu3f9g2PgHj5DC5CZl"
+                            consumerSecret:@"1CkFkQpRdHpZMJDEKUMcBg0lrY59kI0DlyjQODS6x2GntLCU8e"];
     // Register for Push Notitications, if running iOS 8
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
