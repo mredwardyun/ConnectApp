@@ -7,7 +7,6 @@
         <!--Navigation Controller-->
         <scene sceneID="bvX-Za-7Ij">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qEs-Ar-XcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="S21-om-P30" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dxS-4o-HM0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -17,6 +16,7 @@
                         <segue destination="t9b-x9-3Z3" kind="relationship" relationship="rootViewController" id="qWj-Bn-pfe"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qEs-Ar-XcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-565" y="483"/>
         </scene>
@@ -38,6 +38,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8Y-dd-pfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="483"/>
+        </scene>
+        <!--Phone Number View Controller-->
+        <scene sceneID="w1d-3b-Nvl">
+            <objects>
+                <viewController storyboardIdentifier="getPhoneNumber" id="z9r-yk-8fv" customClass="PhoneNumberViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JxE-Vv-7RK"/>
+                        <viewControllerLayoutGuide type="bottom" id="sEA-9G-5pp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cye-f2-gfv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cey-vq-MSc">
+                                <rect key="frame" x="70" y="199" width="181" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="phoneNumberTextField" destination="cey-vq-MSc" id="ftN-M0-9Jx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTz-9P-GM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="1172"/>
         </scene>
         <!--Center Page Content View Controller-->
         <scene sceneID="bAo-gb-1dP">
@@ -87,11 +115,21 @@
                                     <action selector="fbLoginButtonPressed:" destination="ukv-F5-31Y" eventType="touchUpInside" id="7Yc-l2-FwM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L4-Yl-CAP">
+                                <rect key="frame" x="109" y="188" width="103" height="30"/>
+                                <state key="normal" title="Phone Number">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getUserPhoneNumber:" destination="ukv-F5-31Y" eventType="touchUpInside" id="KI9-vP-RaU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="9z8-Io-v2G" id="hF2-JI-hB4"/>
+                        <outlet property="phoneNumberButton" destination="3L4-Yl-CAP" id="vhZ-ZN-beM"/>
                         <segue destination="S21-om-P30" kind="modal" identifier="FinishedAllLogins" id="L5i-av-hWi"/>
                     </connections>
                 </viewController>

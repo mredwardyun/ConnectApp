@@ -9,10 +9,12 @@
 #import "FirstLaunchViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "PhoneNumberViewController.h"
 
 @interface FirstLaunchViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *fbLoginButton;
 - (IBAction)fbLoginButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *phoneNumberButton;
 
 @end
 
@@ -79,6 +81,12 @@
 	}
 }
 
+- (IBAction)getUserPhoneNumber:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    PhoneNumberViewController *phoneNumberViewController = (PhoneNumberViewController*)[storyboard instantiateViewControllerWithIdentifier:@"getPhoneNumber"];
+    
+    [self presentViewController:phoneNumberViewController animated:YES completion:nil];
+}
 /*
  #pragma mark - Navigation
  
