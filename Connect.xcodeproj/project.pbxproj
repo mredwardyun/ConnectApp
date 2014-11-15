@@ -16,6 +16,7 @@
 		9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A268BD51A172DBA004F23D5 /* PageContentViewController.m */; };
 		9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A52581C1A17A40B00945A37 /* Storyboard.storyboard */; };
 		9A5258201A17A53800945A37 /* CenterPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */; };
+		9A76BC7C1A17ACDD005988BF /* FirstLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */; };
 		EC7795161A1718A000A82581 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7795151A1718A000A82581 /* Parse.framework */; };
 		EC7795181A1718AD00A82581 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7795171A1718AD00A82581 /* Bolts.framework */; };
 		EC77951A1A1718C400A82581 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7795191A1718C400A82581 /* ParseFacebookUtils.framework */; };
@@ -59,6 +60,8 @@
 		9A52581C1A17A40B00945A37 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9A52581E1A17A53800945A37 /* CenterPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterPageContentViewController.h; sourceTree = "<group>"; };
 		9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterPageContentViewController.m; sourceTree = "<group>"; };
+		9A76BC7A1A17ACDD005988BF /* FirstLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLaunchViewController.h; sourceTree = "<group>"; };
+		9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstLaunchViewController.m; sourceTree = "<group>"; };
 		EC7795151A1718A000A82581 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		EC7795171A1718AD00A82581 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		EC7795191A1718C400A82581 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				9A268BD51A172DBA004F23D5 /* PageContentViewController.m */,
 				9A52581E1A17A53800945A37 /* CenterPageContentViewController.h */,
 				9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */,
+				9A76BC7A1A17ACDD005988BF /* FirstLaunchViewController.h */,
+				9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */,
 				9A52581C1A17A40B00945A37 /* Storyboard.storyboard */,
 				5A2518311A170F1600FB15D9 /* Images.xcassets */,
 				5A2518331A170F1600FB15D9 /* LaunchScreen.xib */,
@@ -285,6 +290,7 @@
 				5A2518241A170F1600FB15D9 /* main.m in Sources */,
 				9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */,
 				5A25182D1A170F1600FB15D9 /* ContainerViewController.m in Sources */,
+				9A76BC7C1A17ACDD005988BF /* FirstLaunchViewController.m in Sources */,
 				9A5258201A17A53800945A37 /* CenterPageContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

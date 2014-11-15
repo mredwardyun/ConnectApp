@@ -38,6 +38,24 @@
                                                          UIRemoteNotificationTypeSound)];
     }
 
+	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+	
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+	
+	if(![[NSUserDefaults standardUserDefaults] boolForKey:@"launchedBefore"]){
+		NSLog(@"not launched before");
+		UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FirstLaunchViewController"];
+		self.window.rootViewController = viewController;
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"launchedBefore"];
+	} else {
+		NSLog(@"launched before");
+		UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"ContainerViewController"];
+		self.window.rootViewController = viewController;
+		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"launchedBefore"];
+	}
+	
+	[self.window makeKeyAndVisible];
+	
     return YES;
 }
 

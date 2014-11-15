@@ -7,7 +7,7 @@
         <!--Container View Controller-->
         <scene sceneID="Hzd-uF-xU8">
             <objects>
-                <viewController title="Container View Controller" id="t9b-x9-3Z3" customClass="ContainerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContainerViewController" title="Container View Controller" id="t9b-x9-3Z3" customClass="ContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aOf-j8-Kiq"/>
                         <viewControllerLayoutGuide type="bottom" id="xkF-oK-Pcc"/>
@@ -47,6 +47,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edX-jN-TwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="717" y="328"/>
+        </scene>
+        <!--First Launch View Controller-->
+        <scene sceneID="Kwn-E7-YNV">
+            <objects>
+                <viewController storyboardIdentifier="FirstLaunchViewController" id="ukv-F5-31Y" customClass="FirstLaunchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="om1-TN-XTG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ljM-h3-cmg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tvc-Gs-i50">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Launch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq8-F8-xp5">
+                                <rect key="frame" x="113" y="273" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ij-dk-u3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="988"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
