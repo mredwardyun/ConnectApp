@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="S21-om-P30">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ukv-F5-31Y">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -8,6 +8,7 @@
         <scene sceneID="bvX-Za-7Ij">
             <objects>
                 <navigationController id="S21-om-P30" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9sB-Dz-dwT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dxS-4o-HM0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -124,13 +125,21 @@
                                     <action selector="getUserPhoneNumber:" destination="ukv-F5-31Y" eventType="touchUpInside" id="KI9-vP-RaU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zck-8Y-DMP">
+                                <rect key="frame" x="106" y="465" width="109" height="30"/>
+                                <state key="normal" title="Done Signing In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S21-om-P30" kind="modal" identifier="DoneSigningIn" id="8Mg-2g-U6Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="9z8-Io-v2G" id="hF2-JI-hB4"/>
                         <outlet property="phoneNumberButton" destination="3L4-Yl-CAP" id="vhZ-ZN-beM"/>
-                        <segue destination="S21-om-P30" kind="modal" identifier="FinishedAllLogins" id="L5i-av-hWi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ij-dk-u3v" userLabel="First Responder" sceneMemberID="firstResponder"/>

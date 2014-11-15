@@ -52,7 +52,7 @@
 				 if (!error) {
 					 NSString *facebookUsername = [result objectForKey:@"id"];
 					 NSString *realName = [result objectForKey:@"name"];
-					 [[NSUserDefaults standardUserDefaults] setValue:[result objectForKey:@"first_name"] forKey:@"first_name"];
+					 NSLog(@"FB ID %@, real name %@", facebookUsername, realName);
 					 [user setObject:facebookUsername forKey:@"fbusername"];
 					 [user setObject:realName forKey:@"realName"];
 					 [user saveEventually];
@@ -68,33 +68,21 @@
 	[self.fbLoginButton setEnabled:YES];
 	
 	// Did we login successfully ?
-	if (loggedIn) {
-		// Seque to the Image Wall
-		[self performSegueWithIdentifier:@"FinishedAllLogins" sender:self];
-	} else {
+	if (!loggedIn) {
 		// Show error alert
 		[[[UIAlertView alloc] initWithTitle:@"Login Failed"
 									message:@"Facebook Login failed. Please try again"
 								   delegate:nil
 						  cancelButtonTitle:@"Ok"
 						  otherButtonTitles:nil] show];
+		
 	}
 }
 
+
 - (IBAction)getUserPhoneNumber:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    PhoneNumberViewController *phoneNumberViewController = (PhoneNumberViewController*)[storyboard instantiateViewControllerWithIdentifier:@"getPhoneNumber"];
-    
+    PhoneNumberViewController *phoneNumberViewController = (PhoneNumberViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"getPhoneNumber"];
     [self presentViewController:phoneNumberViewController animated:YES completion:nil];
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

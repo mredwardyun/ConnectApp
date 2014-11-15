@@ -76,6 +76,7 @@
         if (currentUser) {
             [currentUser setObject:simpleNumber forKey:@"phoneNumber"];
             NSLog(@"%@",simpleNumber);
+			[currentUser saveEventually];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
