@@ -45,13 +45,15 @@
 	if(![[NSUserDefaults standardUserDefaults] boolForKey:@"launchedBefore"]){
 		NSLog(@"not launched before");
 		UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FirstLaunchViewController"];
-		self.window.rootViewController = viewController;
-		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"launchedBefore"];
+		UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+		self.window.rootViewController = nav;
+//		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"launchedBefore"];
 	} else {
 		NSLog(@"launched before");
 		UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"ContainerViewController"];
-		self.window.rootViewController = viewController;
-		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"launchedBefore"];
+		UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+		self.window.rootViewController = nav;
+//		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"launchedBefore"];
 	}
 	
 	[self.window makeKeyAndVisible];
