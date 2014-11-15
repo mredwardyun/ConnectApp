@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="t9b-x9-3Z3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="S21-om-P30">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bvX-Za-7Ij">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qEs-Ar-XcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="S21-om-P30" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dxS-4o-HM0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="t9b-x9-3Z3" kind="relationship" relationship="rootViewController" id="qWj-Bn-pfe"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-565" y="483"/>
+        </scene>
         <!--Container View Controller-->
         <scene sceneID="Hzd-uF-xU8">
             <objects>
@@ -21,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8Y-dd-pfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222.93333333333334" y="387.18666666666667"/>
+            <point key="canvasLocation" x="188" y="483"/>
         </scene>
         <!--Center Page Content View Controller-->
         <scene sceneID="bAo-gb-1dP">
@@ -69,7 +85,6 @@
                                 </state>
                                 <connections>
                                     <action selector="fbLoginButtonPressed:" destination="ukv-F5-31Y" eventType="touchUpInside" id="7Yc-l2-FwM"/>
-                                    <segue destination="t9b-x9-3Z3" kind="modal" identifier="FinishedAllLogins" id="4Bo-yW-mNq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,11 +92,12 @@
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="9z8-Io-v2G" id="hF2-JI-hB4"/>
+                        <segue destination="S21-om-P30" kind="modal" identifier="FinishedAllLogins" id="L5i-av-hWi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ij-dk-u3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="988"/>
+            <point key="canvasLocation" x="-979" y="1156"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

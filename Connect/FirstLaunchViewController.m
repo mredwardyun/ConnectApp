@@ -7,6 +7,7 @@
 //
 
 #import "FirstLaunchViewController.h"
+#import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface FirstLaunchViewController ()
@@ -29,37 +30,34 @@
 
 - (void) fbLogin {
 	// Basic User information and your friends are part of the standard permissions
-	// so there is no reason to ask for additional permissions
-	[PFFacebookUtils initializeFacebook];
-	[PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
-		// Was login successful ?
+	// so there is no reason to ask for additional permissions]
+	[PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email"]
+									block:^(PFUser *user, NSError *error) {
+		NSLog(@"Initial login permissions: %@", [[PFFacebookUtils session] permissions]);
 		if (!user) {
+			NSLog(@"Hi1");
 			if (!error) {
 				NSLog(@"The user cancelled the Facebook login.");
 			} else {
 				NSLog(@"An error occurred: %@", error.localizedDescription);
 			}
-			// Callback - login failed
-				[self fbDidLogin:NO];
+			[self fbDidLogin:NO];
 		} else {
-			if (user.isNew) {
-				NSLog(@"User signed up and logged in through Facebook!");
-			} else {
-				NSLog(@"User logged in through Facebook!");
+			NSLog(@"Current user %@", [PFUser currentUser]);
+			FBRequest *request = [FBRequest requestForMe];
+			[request startWithCompletionHandler:
+			 ^(FBRequestConnection *connection, id result, NSError *error) {
+				 if (!error) {
+					 NSString *facebookUsername = [result objectForKey:@"id"];
+					 NSString *realName = [result objectForKey:@"name"];
+					 [[NSUserDefaults standardUserDefaults] setValue:[result objectForKey:@"first_name"] forKey:@"first_name"];
+					 [user setObject:facebookUsername forKey:@"fbusername"];
+					 [user setObject:realName forKey:@"realName"];
+					 [user saveEventually];
+				 }
+				 }];
+			[self fbDidLogin:YES];
 			}
-			
-			[FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-				if (!error) {
-					NSDictionary<FBGraphUser> *me = (NSDictionary<FBGraphUser> *)result;
-					// Store the Facebook Id
-					[[PFUser currentUser] setObject:me.id forKey:@"fbId"];
-					[[PFUser currentUser] saveInBackground];
-				}
-				
-				// Callback - login successful
-				[self fbDidLogin:YES];
-			}];
-		}
 	}];
 }
 

@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ContainerViewController.h"
 #import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     // Override point for customization after application launch.
     [Parse setApplicationId:@"7Wljpzbqeo8MV30XjHCMXPvETdKET1JkYG0hjRBo"
                   clientKey:@"Z4RtU3Bre5HSpAzCmz038AVR6JT2iIs4VMPeZZlS"];
-    
+	[PFFacebookUtils initializeFacebook];
     // Register for Push Notitications, if running iOS 8
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
@@ -45,8 +45,7 @@
 	if(![[NSUserDefaults standardUserDefaults] boolForKey:@"launchedBefore"]){
 		NSLog(@"not launched before");
 		UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"FirstLaunchViewController"];
-		UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
-		self.window.rootViewController = nav;
+		self.window.rootViewController = viewController;
 //		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"launchedBefore"];
 	} else {
 		NSLog(@"launched before");
