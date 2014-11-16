@@ -609,6 +609,12 @@
                             <outlet property="delegate" destination="56X-RE-nhy" id="IJN-Ow-rNf"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="facebookSwitch" destination="FFC-kB-06L" id="XMn-FH-IjO"/>
+                        <outlet property="phoneSwitch" destination="5vP-DD-eiJ" id="sfd-nK-WbB"/>
+                        <outlet property="twitterSwitch" destination="Dfa-rR-1Hf" id="CAc-OD-iHP"/>
+                        <outlet property="yoSwitch" destination="qEn-Ap-1Jc" id="Uwj-FZ-h8z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXb-eX-HHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -643,7 +649,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="7vL-ls-jcg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7vL-ls-jcg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7vL-ls-jcg" id="6xH-xU-8o5">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -661,7 +667,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="UMd-ah-wSP">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UMd-ah-wSP">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UMd-ah-wSP" id="fx9-zw-lbr">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -679,7 +685,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="sAi-MW-ZY3">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sAi-MW-ZY3">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sAi-MW-ZY3" id="Rt4-1i-caz">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -697,7 +703,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="Vtn-IA-Sfw">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vtn-IA-Sfw">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vtn-IA-Sfw" id="6AT-AI-XfP">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -757,6 +763,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Okk-LM-KEb"/>
+        <segue reference="Whl-nb-Phw"/>
     </inferredMetricsTieBreakers>
 </document>
