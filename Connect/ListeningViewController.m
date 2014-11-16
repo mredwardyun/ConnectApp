@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (nonatomic) NSString *contactRealname;
 @property (nonatomic) NSString *contactUsername;
-@property (nonatomic) NSMutableArray *contactServices;
+@property (nonatomic) NSMutableArray *contactAvailableServices;
 
 @end
 
@@ -37,13 +37,13 @@
 - (void)listenToBroadcasts {
 	NSString *messageReceived = @"";
 	if ([messageReceived containsString:@"PHONE"]) {
-		[self.contactServices addObject:@"PHONE"];
+		[self.contactAvailableServices addObject:@"PHONE"];
 	}
 	if ([messageReceived containsString:@"TWITTER"]) {
-		[self.contactServices addObject:@"TWITTER"];
+		[self.contactAvailableServices addObject:@"TWITTER"];
 	}
 	if ([messageReceived containsString:@"YO"]) {
-		[self.contactServices addObject:@"YO"];
+		[self.contactAvailableServices addObject:@"YO"];
 	}
 	NSArray *components = [messageReceived componentsSeparatedByString:@"\n"];
 	for (NSString *component in components) {
@@ -65,7 +65,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([[segue destinationViewController] isKindOfClass:[ServicesViewController class]]) {
-		((ServicesViewController *)[segue destinationViewController]).availableServices = self.contactServices;
+		((ServicesViewController *)[segue destinationViewController]).availableServices = self.contactAvailableServices;
 	}
 }
 

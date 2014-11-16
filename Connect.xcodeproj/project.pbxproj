@@ -42,7 +42,6 @@
 		9A6E69E61A18261400FD3671 /* YO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69E51A18261400FD3671 /* YO.m */; };
 		9A6E69E91A1848FD00FD3671 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69E81A1848FD00FD3671 /* ServicesViewController.m */; };
 		9A6E69EC1A1849F200FD3671 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69EB1A1849F200FD3671 /* ConfirmViewController.m */; };
-		9A6E69EF1A184A6400FD3671 /* AddServicesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69EE1A184A6400FD3671 /* AddServicesHelper.m */; };
 		9A6E69F21A184A8A00FD3671 /* BroadcastingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69F11A184A8A00FD3671 /* BroadcastingViewController.m */; };
 		9A6E69F51A18784300FD3671 /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69F41A18784300FD3671 /* FinishViewController.m */; };
 		9A76BC7C1A17ACDD005988BF /* FirstLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */; };
@@ -143,8 +142,6 @@
 		9A6E69E81A1848FD00FD3671 /* ServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesViewController.m; sourceTree = "<group>"; };
 		9A6E69EA1A1849F200FD3671 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
 		9A6E69EB1A1849F200FD3671 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
-		9A6E69ED1A184A6400FD3671 /* AddServicesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddServicesHelper.h; sourceTree = "<group>"; };
-		9A6E69EE1A184A6400FD3671 /* AddServicesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddServicesHelper.m; sourceTree = "<group>"; };
 		9A6E69F01A184A8A00FD3671 /* BroadcastingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastingViewController.h; sourceTree = "<group>"; };
 		9A6E69F11A184A8A00FD3671 /* BroadcastingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadcastingViewController.m; sourceTree = "<group>"; };
 		9A6E69F31A18784300FD3671 /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishViewController.h; sourceTree = "<group>"; };
@@ -263,8 +260,6 @@
 				9A6E69EB1A1849F200FD3671 /* ConfirmViewController.m */,
 				9A6E69F31A18784300FD3671 /* FinishViewController.h */,
 				9A6E69F41A18784300FD3671 /* FinishViewController.m */,
-				9A6E69ED1A184A6400FD3671 /* AddServicesHelper.h */,
-				9A6E69EE1A184A6400FD3671 /* AddServicesHelper.m */,
 				9A6E69E41A18261400FD3671 /* YO.h */,
 				9A6E69E51A18261400FD3671 /* YO.m */,
 				9A52581C1A17A40B00945A37 /* Storyboard.storyboard */,
@@ -479,7 +474,6 @@
 				5AAB18E51A1877B500088E72 /* UIImage+FlatUI.m in Sources */,
 				5AAB18ED1A1877B500088E72 /* UIToolbar+FlatUI.m in Sources */,
 				5AAB18E91A1877B500088E72 /* UISlider+FlatUI.m in Sources */,
-				9A6E69EF1A184A6400FD3671 /* AddServicesHelper.m in Sources */,
 				5AAB18E41A1877B500088E72 /* UIFont+FlatUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

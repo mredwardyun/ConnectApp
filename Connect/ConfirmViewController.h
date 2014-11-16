@@ -10,6 +10,6 @@
 
 @interface ConfirmViewController : UITableViewController
 
-@property (nonatomic) NSDictionary *requestedServicesWithInfo;
+@property (nonatomic, copy) NSDictionary *requestedServicesWithInfo;
 
 @end

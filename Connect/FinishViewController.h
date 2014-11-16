@@ -10,4 +10,6 @@
 
 @interface FinishViewController : UITableViewController
 
+@property (nonatomic, copy) NSDictionary *confirmedServicesWithInfo;
+
 @end
