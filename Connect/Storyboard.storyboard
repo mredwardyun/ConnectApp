@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ukv-F5-31Y">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -52,13 +54,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cey-vq-MSc">
-                                <rect key="frame" x="70" y="199" width="181" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cey-vq-MSc">
+                                <rect key="frame" x="70" y="201" width="181" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="cey-vq-MSc" secondAttribute="height" multiplier="32:3" id="i0b-nf-hbs"/>
+                            <constraint firstItem="cey-vq-MSc" firstAttribute="top" secondItem="JxE-Vv-7RK" secondAttribute="bottom" constant="181" id="nVK-Ia-jTt"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="phoneNumberTextField" destination="cey-vq-MSc" id="ftN-M0-9Jx"/>
@@ -67,6 +73,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vTz-9P-GM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-249" y="1172"/>
+        </scene>
+        <!--Yo View Controller-->
+        <scene sceneID="l2B-kA-Yjc">
+            <objects>
+                <viewController storyboardIdentifier="getYo" id="zZy-Qx-ywy" customClass="YoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OjO-6u-2uH"/>
+                        <viewControllerLayoutGuide type="bottom" id="aaL-EI-Nlv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kDw-Za-ZhT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p32-jo-epb">
+                                <rect key="frame" x="64" y="206" width="192" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjz-me-QAc">
+                                <rect key="frame" x="267" y="28" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="zZy-Qx-ywy" eventType="touchUpInside" id="TzO-58-Q9B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-ZI-y80">
+                                <rect key="frame" x="16" y="28" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton:" destination="zZy-Qx-ywy" eventType="touchUpInside" id="IBg-JW-QZh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your Yo username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivv-cn-P4W">
+                                <rect key="frame" x="39" y="177" width="243" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="p32-jo-epb" secondAttribute="centerX" id="72k-aE-S6K"/>
+                            <constraint firstItem="vjz-me-QAc" firstAttribute="trailing" secondItem="kDw-Za-ZhT" secondAttribute="trailingMargin" id="Bdl-Wf-eCF"/>
+                            <constraint firstItem="h7V-ZI-y80" firstAttribute="top" secondItem="OjO-6u-2uH" secondAttribute="bottom" constant="8" id="CDo-lP-lgN"/>
+                            <constraint firstItem="h7V-ZI-y80" firstAttribute="leading" secondItem="kDw-Za-ZhT" secondAttribute="leadingMargin" id="CLI-MC-t96"/>
+                            <constraint firstAttribute="centerX" secondItem="ivv-cn-P4W" secondAttribute="centerX" constant="-0.5" id="KVZ-XT-yp2"/>
+                            <constraint firstItem="vjz-me-QAc" firstAttribute="top" secondItem="OjO-6u-2uH" secondAttribute="bottom" constant="8" id="acN-lb-Pis"/>
+                            <constraint firstItem="ivv-cn-P4W" firstAttribute="top" secondItem="OjO-6u-2uH" secondAttribute="bottom" constant="157" id="eaw-bk-ybL"/>
+                            <constraint firstItem="p32-jo-epb" firstAttribute="top" secondItem="OjO-6u-2uH" secondAttribute="bottom" constant="186" id="jq7-en-wy4"/>
+                            <constraint firstItem="p32-jo-epb" firstAttribute="width" secondItem="kDw-Za-ZhT" secondAttribute="height" multiplier="24:71" id="o3N-bh-OEf"/>
+                            <constraint firstItem="p32-jo-epb" firstAttribute="top" secondItem="ivv-cn-P4W" secondAttribute="top" constant="29" id="s9S-BF-aWc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="yoTextField" destination="p32-jo-epb" id="Qpn-yh-XeH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFQ-W8-Udf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="1163"/>
         </scene>
         <!--SettingsViewController-->
         <scene sceneID="WwR-0A-42g">
@@ -189,6 +259,15 @@
                                     <action selector="twitterLogin:" destination="ukv-F5-31Y" eventType="touchUpInside" id="jLX-Qy-CQW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRJ-ro-lPk">
+                                <rect key="frame" x="145" y="353" width="30" height="30"/>
+                                <state key="normal" title="Yo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="yoButton:" destination="ukv-F5-31Y" eventType="touchUpInside" id="0yQ-R7-nnM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -196,6 +275,8 @@
                             <constraint firstItem="3L4-Yl-CAP" firstAttribute="top" secondItem="9z8-Io-v2G" secondAttribute="bottom" constant="76" id="2Dh-dY-x0N"/>
                             <constraint firstItem="Ipg-zm-wkU" firstAttribute="top" secondItem="3L4-Yl-CAP" secondAttribute="bottom" constant="56" id="50c-MJ-X4d"/>
                             <constraint firstAttribute="centerX" secondItem="3L4-Yl-CAP" secondAttribute="centerX" constant="-0.5" id="AIt-cT-Edq"/>
+                            <constraint firstAttribute="centerX" secondItem="LRJ-ro-lPk" secondAttribute="centerX" id="ASw-bl-ndK"/>
+                            <constraint firstItem="LRJ-ro-lPk" firstAttribute="top" secondItem="Ipg-zm-wkU" secondAttribute="bottom" constant="49" id="F5U-bI-9x0"/>
                             <constraint firstAttribute="centerX" secondItem="Ipg-zm-wkU" secondAttribute="centerX" id="X0n-e0-7h5"/>
                             <constraint firstItem="9z8-Io-v2G" firstAttribute="top" secondItem="om1-TN-XTG" secondAttribute="bottom" constant="62" id="cLB-68-CLd"/>
                             <constraint firstAttribute="centerX" secondItem="zck-8Y-DMP" secondAttribute="centerX" constant="-0.5" id="tan-qG-13k"/>

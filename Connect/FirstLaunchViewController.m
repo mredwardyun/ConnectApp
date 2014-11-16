@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "PhoneNumberViewController.h"
+#import "YoViewController.h"
 
 @interface FirstLaunchViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *fbLoginButton;
@@ -160,6 +161,10 @@
             }
         }];
     }
+}
+- (IBAction)yoButton:(id)sender {
+    YoViewController *yoViewController = (YoViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"getYo"];
+    [self presentViewController:yoViewController animated:YES completion:nil];
 }
 
 @end

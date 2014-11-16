@@ -16,6 +16,7 @@
 		5A2518AB1A17CFC500FB15D9 /* PhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2518AA1A17CFC500FB15D9 /* PhoneNumberViewController.m */; };
 		5AAB18AD1A180E7A00088E72 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAB18AC1A180E7A00088E72 /* Accounts.framework */; };
 		5AAB18AF1A180E7F00088E72 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAB18AE1A180E7F00088E72 /* Social.framework */; };
+		5AAB18B21A1826E700088E72 /* YoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB18B11A1826E700088E72 /* YoViewController.m */; };
 		9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A268BD51A172DBA004F23D5 /* PageContentViewController.m */; };
 		9A292CA61A181F4D00450D3C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A292CA51A181F4D00450D3C /* SettingsViewController.m */; };
 		9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A52581C1A17A40B00945A37 /* Storyboard.storyboard */; };
@@ -64,6 +65,8 @@
 		5A2518AA1A17CFC500FB15D9 /* PhoneNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberViewController.m; sourceTree = "<group>"; };
 		5AAB18AC1A180E7A00088E72 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		5AAB18AE1A180E7F00088E72 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		5AAB18B01A1826E700088E72 /* YoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YoViewController.h; path = ../YoViewController.h; sourceTree = "<group>"; };
+		5AAB18B11A1826E700088E72 /* YoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YoViewController.m; path = ../YoViewController.m; sourceTree = "<group>"; };
 		9A268BD41A172DBA004F23D5 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		9A268BD51A172DBA004F23D5 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		9A292CA41A181F4D00450D3C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -162,14 +165,8 @@
 			children = (
 				5A2518251A170F1600FB15D9 /* AppDelegate.h */,
 				5A2518261A170F1600FB15D9 /* AppDelegate.m */,
-				5A25182B1A170F1600FB15D9 /* ContainerViewController.h */,
-				5A25182C1A170F1600FB15D9 /* ContainerViewController.m */,
-				9A268BD41A172DBA004F23D5 /* PageContentViewController.h */,
-				9A268BD51A172DBA004F23D5 /* PageContentViewController.m */,
-				9A52581E1A17A53800945A37 /* CenterPageContentViewController.h */,
 				9A292CA41A181F4D00450D3C /* SettingsViewController.h */,
 				9A292CA51A181F4D00450D3C /* SettingsViewController.m */,
-				9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */,
 				9A76BC7A1A17ACDD005988BF /* FirstLaunchViewController.h */,
 				9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */,
 				5A2518A91A17CFC500FB15D9 /* PhoneNumberViewController.h */,
@@ -178,6 +175,8 @@
 				5A25182C1A170F1600FB15D9 /* ContainerViewController.m */,
 				9A268BD41A172DBA004F23D5 /* PageContentViewController.h */,
 				9A268BD51A172DBA004F23D5 /* PageContentViewController.m */,
+				5AAB18B01A1826E700088E72 /* YoViewController.h */,
+				5AAB18B11A1826E700088E72 /* YoViewController.m */,
 				9A52581E1A17A53800945A37 /* MainPageContentViewController.h */,
 				9A52581F1A17A53800945A37 /* MainPageContentViewController.m */,
 				9A52581C1A17A40B00945A37 /* Storyboard.storyboard */,
@@ -318,6 +317,7 @@
 				5A2518271A170F1600FB15D9 /* AppDelegate.m in Sources */,
 				5A2518241A170F1600FB15D9 /* main.m in Sources */,
 				9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */,
+				5AAB18B21A1826E700088E72 /* YoViewController.m in Sources */,
 				9A292CA61A181F4D00450D3C /* SettingsViewController.m in Sources */,
 				5A2518AB1A17CFC500FB15D9 /* PhoneNumberViewController.m in Sources */,
 				5A25182D1A170F1600FB15D9 /* ContainerViewController.m in Sources */,
