@@ -21,6 +21,11 @@
 		9A292CA61A181F4D00450D3C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A292CA51A181F4D00450D3C /* SettingsViewController.m */; };
 		9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A52581C1A17A40B00945A37 /* Storyboard.storyboard */; };
 		9A5258201A17A53800945A37 /* MainPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52581F1A17A53800945A37 /* MainPageContentViewController.m */; };
+		9A6E69E61A18261400FD3671 /* YO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69E51A18261400FD3671 /* YO.m */; };
+		9A6E69E91A1848FD00FD3671 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69E81A1848FD00FD3671 /* ServicesViewController.m */; };
+		9A6E69EC1A1849F200FD3671 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69EB1A1849F200FD3671 /* ConfirmViewController.m */; };
+		9A6E69EF1A184A6400FD3671 /* AddServicesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69EE1A184A6400FD3671 /* AddServicesHelper.m */; };
+		9A6E69F21A184A8A00FD3671 /* BroadcastingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69F11A184A8A00FD3671 /* BroadcastingViewController.m */; };
 		9A76BC7C1A17ACDD005988BF /* FirstLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */; };
 		9A76BC7E1A17BA1B005988BF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A76BC7D1A17BA1B005988BF /* FacebookSDK.framework */; };
 		9A76BC831A17C156005988BF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A76BC811A17C156005988BF /* Parse.framework */; };
@@ -74,6 +79,16 @@
 		9A52581C1A17A40B00945A37 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9A52581E1A17A53800945A37 /* MainPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageContentViewController.h; sourceTree = "<group>"; };
 		9A52581F1A17A53800945A37 /* MainPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageContentViewController.m; sourceTree = "<group>"; };
+		9A6E69E41A18261400FD3671 /* YO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YO.h; sourceTree = "<group>"; };
+		9A6E69E51A18261400FD3671 /* YO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YO.m; sourceTree = "<group>"; };
+		9A6E69E71A1848FD00FD3671 /* ServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesViewController.h; sourceTree = "<group>"; };
+		9A6E69E81A1848FD00FD3671 /* ServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesViewController.m; sourceTree = "<group>"; };
+		9A6E69EA1A1849F200FD3671 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
+		9A6E69EB1A1849F200FD3671 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
+		9A6E69ED1A184A6400FD3671 /* AddServicesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddServicesHelper.h; sourceTree = "<group>"; };
+		9A6E69EE1A184A6400FD3671 /* AddServicesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddServicesHelper.m; sourceTree = "<group>"; };
+		9A6E69F01A184A8A00FD3671 /* BroadcastingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastingViewController.h; sourceTree = "<group>"; };
+		9A6E69F11A184A8A00FD3671 /* BroadcastingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadcastingViewController.m; sourceTree = "<group>"; };
 		9A76BC7A1A17ACDD005988BF /* FirstLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLaunchViewController.h; sourceTree = "<group>"; };
 		9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstLaunchViewController.m; sourceTree = "<group>"; };
 		9A76BC7D1A17BA1B005988BF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -179,6 +194,16 @@
 				5AAB18B11A1826E700088E72 /* YoViewController.m */,
 				9A52581E1A17A53800945A37 /* MainPageContentViewController.h */,
 				9A52581F1A17A53800945A37 /* MainPageContentViewController.m */,
+				9A6E69E71A1848FD00FD3671 /* ServicesViewController.h */,
+				9A6E69E81A1848FD00FD3671 /* ServicesViewController.m */,
+				9A6E69EA1A1849F200FD3671 /* ConfirmViewController.h */,
+				9A6E69EB1A1849F200FD3671 /* ConfirmViewController.m */,
+				9A6E69ED1A184A6400FD3671 /* AddServicesHelper.h */,
+				9A6E69EE1A184A6400FD3671 /* AddServicesHelper.m */,
+				9A6E69E41A18261400FD3671 /* YO.h */,
+				9A6E69E51A18261400FD3671 /* YO.m */,
+				9A6E69F01A184A8A00FD3671 /* BroadcastingViewController.h */,
+				9A6E69F11A184A8A00FD3671 /* BroadcastingViewController.m */,
 				9A52581C1A17A40B00945A37 /* Storyboard.storyboard */,
 				5A2518311A170F1600FB15D9 /* Images.xcassets */,
 				5A2518331A170F1600FB15D9 /* LaunchScreen.xib */,
@@ -315,14 +340,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2518271A170F1600FB15D9 /* AppDelegate.m in Sources */,
+				9A6E69E91A1848FD00FD3671 /* ServicesViewController.m in Sources */,
 				5A2518241A170F1600FB15D9 /* main.m in Sources */,
+				9A6E69EC1A1849F200FD3671 /* ConfirmViewController.m in Sources */,
 				9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */,
 				5AAB18B21A1826E700088E72 /* YoViewController.m in Sources */,
 				9A292CA61A181F4D00450D3C /* SettingsViewController.m in Sources */,
+				9A6E69F21A184A8A00FD3671 /* BroadcastingViewController.m in Sources */,
 				5A2518AB1A17CFC500FB15D9 /* PhoneNumberViewController.m in Sources */,
 				5A25182D1A170F1600FB15D9 /* ContainerViewController.m in Sources */,
 				9A76BC7C1A17ACDD005988BF /* FirstLaunchViewController.m in Sources */,
+				9A6E69E61A18261400FD3671 /* YO.m in Sources */,
 				9A5258201A17A53800945A37 /* MainPageContentViewController.m in Sources */,
+				9A6E69EF1A184A6400FD3671 /* AddServicesHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

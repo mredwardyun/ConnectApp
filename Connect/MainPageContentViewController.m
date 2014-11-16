@@ -51,7 +51,6 @@
 	imageView.clipsToBounds = YES;
 	imageView.frame = cell.bounds;
 	[cell addSubview:imageView];
-	cell.backgroundColor = [UIColor greenColor];
 	return cell;
 }
 

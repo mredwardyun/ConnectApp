@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "YO.h"
 
 @interface AppDelegate ()
 
@@ -42,6 +43,9 @@
 	
 	NSString *UUID = [[NSUUID UUID] UUIDString];
 	[[NSUserDefaults standardUserDefaults] setObject:UUID forKey:@"UUID"];
+	
+	NSString *yoKey = @"6fc93444-9e70-4e61-91f2-1fac50dcc3f8";
+	[YO startWithAPIKey:yoKey];
 	
 	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 	

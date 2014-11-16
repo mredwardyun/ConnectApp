@@ -38,7 +38,6 @@
 									block:^(PFUser *user, NSError *error) {
 		NSLog(@"Initial login permissions: %@", [[PFFacebookUtils session] permissions]);
 		if (!user) {
-			NSLog(@"Hi1");
 			if (!error) {
 				NSLog(@"The user cancelled the Facebook login.");
 			} else {
@@ -46,11 +45,11 @@
 			}
 			[self fbDidLogin:NO];
 		} else {
-			NSLog(@"Current user %@", [PFUser currentUser]);
 			FBRequest *request = [FBRequest requestForMe];
 			[request startWithCompletionHandler:
 			 ^(FBRequestConnection *connection, id result, NSError *error) {
 				 if (!error) {
+					 NSLog(@"Dictionary %@", result);
 					 NSString *facebookUsername = [result objectForKey:@"id"];
 					 NSString *realName = [result objectForKey:@"name"];
 					 
@@ -88,8 +87,6 @@
 	}
 }
 
-
-
 - (IBAction)getUserPhoneNumber:(id)sender {
     PhoneNumberViewController *phoneNumberViewController = (PhoneNumberViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"getPhoneNumber"];
     [self presentViewController:phoneNumberViewController animated:YES completion:nil];
@@ -115,6 +112,7 @@
                     NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                     NSString *twitterID = [results objectForKey:@"id"];
                     NSLog(@"%@", twitterID);
+					[[NSUserDefaults standardUserDefaults] setObject:twitterID forKey:@"twitterID"];
                     [currentUser setObject:twitterID forKey:@"TwitterID"];
                     [currentUser saveInBackground];
                 } else {
@@ -140,6 +138,7 @@
                 NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                 NSString *twitterID = [results objectForKey:@"id"];
                 NSLog(@"%@", twitterID);
+				[[NSUserDefaults standardUserDefaults] setObject:twitterID forKey:@"twitterID"];
                 [user setObject:twitterID forKey:@"TwitterID"];
                 [user saveInBackground];
             } else {
@@ -155,6 +154,7 @@
                 NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                 NSString *twitterID = [results objectForKey:@"id"];
                 NSLog(@"%@", twitterID);
+				[[NSUserDefaults standardUserDefaults] setObject:twitterID forKey:@"twitterID"];
                 [user setObject:twitterID forKey:@"TwitterID"];
                 [user saveInBackground];
 
