@@ -8,13 +8,13 @@
 
 #import "ListeningViewController.h"
 #import "FirstLaunchViewController.h"
-#import "ServicesViewController.h"
+#import "DopeViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "TransferService.h"
 
-@interface ListeningViewController () <CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface ListeningViewController () <CBCentralManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *button;
@@ -34,12 +34,12 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Head picture in image view
-	self.label.text = @"";
+	self.label.text = @"Connecting...";
 	self.imageView.layer.cornerRadius = self.imageView.frame.size.width/2;
 	self.imageView.clipsToBounds = YES;
 	self.contactAvailableServices = [[NSMutableArray alloc] initWithArray:@[@"FB"]];
 
-	
+	NSLog(@"Entered listening view");
 	// Start up the CBCentralManager
 	_centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 	
@@ -72,7 +72,6 @@
 	NSArray *components = [messageReceived componentsSeparatedByString:@"\n"];
 	for (NSString *component in components) {
 		if ([component containsString:@"NAME:"]) {
-			NSLog(@"Convert name %@", component);
 			self.contactRealname = [component componentsSeparatedByString:@"NAME:"][1];
 		}
 		if ([component containsString:@"FB:"]) {
@@ -89,11 +88,12 @@
 	[self.centralManager stopScan];
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//	if ([[segue destinationViewController] isKindOfClass:[ServicesViewController class]]) {
-//		((ServicesViewController *)[segue destinationViewController]).availableServices = self.contactAvailableServices;
-//	}
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([[segue destinationViewController] isKindOfClass:[DopeViewController class]]) {
+		((DopeViewController *)[segue destinationViewController]).availableServices = self.contactAvailableServices;
+		NSLog(@"Leaving listening for dope");
+	}
+}
 
 
 
@@ -307,7 +307,7 @@
 	self.discoveredPeripheral = nil;
 	
 	// We're disconnected, so start scanning again
-	[self scan];
+//	[self scan];
 }
 
 

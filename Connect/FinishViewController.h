@@ -10,6 +10,7 @@
 
 @interface FinishViewController : UITableViewController
 
-@property (nonatomic, copy) NSDictionary *confirmedServicesWithInfo;
+@property (nonatomic, copy) NSMutableDictionary *confirmedServicesWithInfo;
+@property (nonatomic) BOOL needsReceive;
 
 @end

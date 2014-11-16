@@ -60,7 +60,6 @@
 		NSLog(@"launched before");
 		UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"ContainerViewController"];
 		self.window.rootViewController = viewController;
-		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"launchedBefore"];
 	}
 	
 	[self.window makeKeyAndVisible];

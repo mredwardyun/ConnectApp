@@ -1,51 +1,95 @@
 //
-//  ServicesViewController.m
+//  DopeViewController.m
 //  Connect
 //
-//  Created by Ethan Yu on 11/15/14.
+//  Created by Edward Yun on 11/16/14.
 //  Copyright (c) 2014 Liu. All rights reserved.
 //
 
-#import "ServicesViewController.h"
-#import "FinishViewController.h"
+#import "DopeViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "TransferService.h"
+#import "FinishViewController.h"
 
-@interface ServicesViewController () <CBPeripheralManagerDelegate>
+@interface DopeViewController () <CBPeripheralManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UISwitch *facebookSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *twitterSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *phoneSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *yoSwitch;
+@property (weak, nonatomic) IBOutlet UIImageView *facebookImage;
+@property (weak, nonatomic) IBOutlet UIImageView *twitterImage;
+@property (weak, nonatomic) IBOutlet UIImageView *yoImage;
+@property (weak, nonatomic) IBOutlet UIImageView *phoneImage;
+
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *yoButton;
+@property (weak, nonatomic) IBOutlet UIButton *phoneButton;
+@property (weak, nonatomic) IBOutlet UILabel *realNameLabel;
+@property (nonatomic, assign) BOOL fbRequested;
+@property (nonatomic, assign) BOOL twRequested;
+@property (nonatomic, assign) BOOL yoRequested;
+@property (nonatomic, assign) BOOL phRequested;
 
 @property (nonatomic) NSString *requestToSend;
+
 @property (strong, nonatomic) CBPeripheralManager       *peripheralManager;
 @property (strong, nonatomic) CBMutableCharacteristic   *transferCharacteristic;
 @property (strong, nonatomic) NSData                    *dataToSend;
 @property (nonatomic, readwrite) NSInteger              sendDataIndex;
 
-@property (nonatomic) NSMutableDictionary *confirmedServicesWithInfo;
-
 @end
 
 #define NOTIFY_MTU      20
 
-@implementation ServicesViewController
+@implementation DopeViewController
+
+- (IBAction)facebookButtonPressed:(id)sender {
+	if(self.facebookImage.alpha == 0.5){
+		_fbRequested = YES;
+		self.facebookImage.alpha = 1.0;
+	}else{
+		_fbRequested = NO;
+		self.facebookImage.alpha = 0.5;
+	}
+}
+- (IBAction)twitterButtonPressed:(id)sender {
+	if (self.twitterImage.alpha == 0.5 && [self.availableServices containsObject:@"TWITTER"]){
+		self.twitterImage.alpha = 1.0;
+		_twRequested = YES;
+	}else{
+		_twRequested = NO;
+		self.twitterImage.alpha = 0.5;
+	}
+}
+- (IBAction)yoButtonPressed:(id)sender {
+	if(self.yoImage.alpha == 0.5 && [self.availableServices containsObject:@"YO"]){
+		self.yoImage.alpha = 1.0;
+		_yoRequested = YES;
+	}else{
+		_yoRequested = NO;
+		self.yoImage.alpha = 0.5;
+	}
+}
+
+- (IBAction)phoneButtonPressed:(id)sender {
+	if(self.phoneImage.alpha == 0.5 && [self.availableServices containsObject:@"PHONE"]){
+		self.phoneImage.alpha = 1.0;
+		_phRequested = YES;
+	}else{
+		_phRequested = NO;
+		self.phoneImage.alpha = 0.5;
+	}
+}
 
 - (void)viewDidLoad {
-	if (![self.availableServices containsObject:@"PHONE"]) {
-		self.phoneSwitch.on = NO;
-		[self.phoneSwitch setEnabled:NO];
-	}
-	if (![self.availableServices containsObject:@"TWITTER"]) {
-		self.twitterSwitch.on = NO;
-		[self.twitterSwitch setEnabled:NO];
-	}
-	if (![self.availableServices containsObject:@"YO"]) {
-		self.yoSwitch.on = NO;
-		[self.yoSwitch setEnabled:NO];
-	}
-	
+	[super viewDidLoad];
+	NSLog(@"Entered dopeview");
+	_fbRequested = NO;
+	_twRequested = NO;
+	_yoRequested = NO;
+	_phRequested = NO;
+}
+
+- (IBAction)sendButtonPressed:(id)sender {
+	[self sendRequestForServices];
 	_peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		[NSThread sleepForTimeInterval:0.25];
@@ -56,17 +100,9 @@
 	});
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-	// Don't keep it going while we're not showing.
-	[self.peripheralManager stopAdvertising];
-	
-	[super viewWillDisappear:animated];
-}
-
 - (void)sendRequestForServices {
 	NSMutableString *stringToSend = [[NSMutableString alloc] init];
-
+	
 	NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"realname"];
 	NSString *fb = [[NSUserDefaults standardUserDefaults] objectForKey:@"fbusername"];
 	NSString *fbmanual = [[NSUserDefaults standardUserDefaults] objectForKey:@"fbmanual"];
@@ -74,25 +110,40 @@
 	NSString *twitter = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterID"];
 	NSString *yo = [[NSUserDefaults standardUserDefaults] objectForKey:@"YoID"];
 	[stringToSend appendString:[NSString stringWithFormat:@"NAME:%@\n", name]];
-	if (self.facebookSwitch.on) {
+	if (_fbRequested) {
 		[stringToSend appendString:[NSString stringWithFormat:@"FB:%@\n", fb]];
 		if (fbmanual) {
 			[stringToSend appendString:[NSString stringWithFormat:@"FBMANUAL:%@\n", fbmanual]];
 		}
 	}
-	if (phone && self.phoneSwitch.on) {
+	if (phone && _phRequested) {
 		[stringToSend appendString:[NSString stringWithFormat:@"PHONE:%@\n", phone]];
 	}
-	if (twitter && self.twitterSwitch.on) {
+	if (twitter && _twRequested) {
 		[stringToSend appendString:[NSString stringWithFormat:@"TWITTER:%@\n", twitter]];
 	}
-	if (yo && self.yoSwitch.on) {
+	if (yo && _yoRequested) {
 		[stringToSend appendString:[NSString stringWithFormat:@"YO:%@\n", yo]];
 	}
-	NSLog(@"sendRequestForServices %@", stringToSend);
 	self.requestToSend = stringToSend;
-#pragma mark - TODO : call send request
+	NSLog(@"sendRequestForServices %@", self.requestToSend);
 }
+
+
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	 if ([[segue destinationViewController] isKindOfClass:[FinishViewController class]]) {
+		 ((FinishViewController *)[segue destinationViewController]).needsReceive = YES;
+		 NSLog(@"dopeview moved to finish");
+	 }
+ }
+ 
+
+#pragma mark - Peripheral Methods
+
 
 
 /** Required protocol method.  A full app should take care of all the possible states,
@@ -136,7 +187,7 @@
 	
 	// Get the data
 	self.dataToSend = [self.requestToSend dataUsingEncoding:NSUTF8StringEncoding];
-	
+	NSLog(@"Data to send %@", self.dataToSend);
 	// Reset the index
 	self.sendDataIndex = 0;
 	
@@ -172,6 +223,9 @@
 			sendingEOM = NO;
 			
 			NSLog(@"Sent: EOM");
+			
+			[self.peripheralManager stopAdvertising];
+			[self performSegueWithIdentifier:@"SendRequests" sender:self];
 		}
 		
 		// It didn't send, so we'll exit and wait for peripheralManagerIsReadyToUpdateSubscribers to call sendData again
@@ -242,7 +296,6 @@
 	}
 }
 
-
 /** This callback comes in when the PeripheralManager is ready to send the next chunk of data.
  *  This is to ensure that packets will arrive in the order they are sent
  */
@@ -252,47 +305,5 @@
 	[self sendData];
 }
 
-
-- (void)listenForConfirmation {
-	NSString *messageReceived = @""; //change
-	NSLog(@"listenForConfirmation messageReceived %@", messageReceived);
-	self.confirmedServicesWithInfo = [[NSMutableDictionary alloc] init];
-	NSArray *components = [messageReceived componentsSeparatedByString:@"\n"];
-	for (NSString *component in components) {
-		if ([component containsString:@"NAME:"]) {
-			NSString *name = [component componentsSeparatedByString:@"NAME:"][1];
-			[self.confirmedServicesWithInfo setObject:name forKey:@"NAME"];
-		}
-		else if ([component containsString:@"FB:"]) {
-			NSString *fb = [component componentsSeparatedByString:@"FB:"][1];
-			[self.confirmedServicesWithInfo setObject:fb forKey:@"FB"];
-		}
-		else if ([component containsString:@"FBMANUAL:"]) {
-			NSString *fbmanual = [component componentsSeparatedByString:@"FBMANUAL:"][1];
-			[self.confirmedServicesWithInfo setObject:fbmanual forKey:@"FBMANUAL"];
-		}
-		else if ([component containsString:@"PHONE:"] && [self.availableServices containsObject:@"PHONE"]) {
-			NSString *phone = [component componentsSeparatedByString:@"PHONE:"][1];
-			[self.confirmedServicesWithInfo setObject:phone forKey:@"PHONE"];
-		}
-		else if ([component containsString:@"TWITTER:"] && [self.availableServices containsObject:@"TWITTER"]) {
-			NSString *twitter = [component componentsSeparatedByString:@"TWITTER:"][1];
-			[self.confirmedServicesWithInfo setObject:twitter forKey:@"TWITTER"];
-		}
-		else if ([component containsString:@"YO:"] && [self.availableServices containsObject:@"YO"]) {
-			NSString *yo = [component componentsSeparatedByString:@"YO:"][1];
-			[self.confirmedServicesWithInfo setObject:yo forKey:@"YO"];
-		}
-	}
-	NSLog(@"listenforconfirmation confirmedserviceswithinfo %@", self.confirmedServicesWithInfo);
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	if ([[segue destinationViewController] isKindOfClass:[FinishViewController class]]) {
-		((FinishViewController *)[segue destinationViewController]).confirmedServicesWithInfo = self.confirmedServicesWithInfo;
-		[self sendRequestForServices];
-		[self.peripheralManager startAdvertising:@{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]] }];
-	}
-}
 
 @end
