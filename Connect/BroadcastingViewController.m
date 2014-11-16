@@ -8,10 +8,16 @@
 
 #import "BroadcastingViewController.h"
 #import "ConfirmViewController.h"
+#import "FUIButton.h"
+#import "UIColor+FlatUI.h"
+#import "UIFont+FlatUI.h"
 
 @interface BroadcastingViewController ()
 
 @property (nonatomic) NSMutableDictionary *requestedServicesWithInfo;
+@property (weak, nonatomic) IBOutlet UIButton *connectButton;
+@property (weak, nonatomic) IBOutlet UIImageView *Logo;
+
 
 @end
 
@@ -74,6 +80,30 @@
 	if ([[segue destinationViewController] isKindOfClass:[ConfirmViewController class]]) {
 		((ConfirmViewController *)[segue destinationViewController]).requestedServicesWithInfo = self.requestedServicesWithInfo;
 	}
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    //self.connectButton.buttonColor = [UIColor turquoiseColor];
+    //self.connectButton.shadowColor = [UIColor greenSeaColor];
+    //self.connectButton.shadowHeight = 0.0f;
+    //self.connectButton.cornerRadius = 4.0f;
+    //self.connectButton.titleLabel.font = [UIFont flatFontOfSize:30];
+    //[self.connectButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    //[self.connectButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    //CGRect buttonFrame = self.connectButton.frame;
+    //buttonFrame.size = CGSizeMake(200, 200);
+    //self.connectButton.frame = buttonFrame;
+    UIImage *originalImage = self.Logo.image;
+    double width = originalImage.size.width;
+    double height = originalImage.size.height;
+    double apect = width/height;
+    
+    double nHeight = 320.f/ apect;
+    self.Logo.frame = CGRectMake(0, 0, 320, nHeight);
+    self.Logo.center = self.view.center;
+    self.Logo.image = originalImage;
 }
 
 @end

@@ -36,6 +36,7 @@
 		5AAB18EB1A1877B500088E72 /* UITabBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB18D61A1877B500088E72 /* UITabBar+FlatUI.m */; };
 		5AAB18EC1A1877B500088E72 /* UITableViewCell+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB18D81A1877B500088E72 /* UITableViewCell+FlatUI.m */; };
 		5AAB18ED1A1877B500088E72 /* UIToolbar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB18DA1A1877B500088E72 /* UIToolbar+FlatUI.m */; };
+		5ACAD2E41A18AF270008499F /* ListeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52581F1A17A53800945A37 /* ListeningViewController.m */; };
 		9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A268BD51A172DBA004F23D5 /* PageContentViewController.m */; };
 		9A292CA61A181F4D00450D3C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A292CA51A181F4D00450D3C /* SettingsViewController.m */; };
 		9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A52581C1A17A40B00945A37 /* Storyboard.storyboard */; };
@@ -443,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ACAD2E41A18AF270008499F /* ListeningViewController.m in Sources */,
 				5AAB18E01A1877B500088E72 /* FUISwitch.m in Sources */,
 				5A2518271A170F1600FB15D9 /* AppDelegate.m in Sources */,
 				5AAB18E31A1877B500088E72 /* UIColor+FlatUI.m in Sources */,

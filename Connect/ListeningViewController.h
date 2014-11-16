@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Liu. All rights reserved.
 //
 
-#import "PageContentViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface ListeningViewController : PageContentViewController
+@interface ListeningViewController : UIViewController
 
 @end

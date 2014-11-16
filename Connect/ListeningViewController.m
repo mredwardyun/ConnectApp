@@ -31,7 +31,7 @@
 	self.label.text = @"";
 	self.imageView.layer.cornerRadius = self.imageView.frame.size.width/2;
 	self.imageView.clipsToBounds = YES;
-	self.contactServices = [[NSMutableArray alloc] initWithArray:@[@"FB"]];
+	self.contactAvailableServices = [[NSMutableArray alloc] initWithArray:@[@"FB"]];
 }
 
 - (void)listenToBroadcasts {
