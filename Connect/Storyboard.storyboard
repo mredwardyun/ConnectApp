@@ -200,7 +200,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="epx-6i-jRR" kind="modal" id="Vja-lA-gig"/>
+                                            <segue destination="epx-6i-jRR" kind="modal" identifier="ShowServices" id="Vja-lA-gig"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -360,7 +360,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nQj-5g-z9R" kind="push" id="wdv-Cj-7fX"/>
+                                    <segue destination="nQj-5g-z9R" kind="push" identifier="SeachNearby" id="wdv-Cj-7fX"/>
                                 </connections>
                             </button>
                         </subviews>

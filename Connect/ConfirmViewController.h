@@ -10,4 +10,6 @@
 
 @interface ConfirmViewController : UIViewController
 
+@property (nonatomic) NSArray *requestedNetworks;
+
 @end

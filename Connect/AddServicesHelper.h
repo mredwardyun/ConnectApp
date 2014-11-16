@@ -10,4 +10,6 @@
 
 @interface AddServicesHelper : NSObject
 
+@property (nonatomic) NSDictionary *userInfo;
+
 @end
