@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ServicesViewController : UIViewController
+@interface ServicesViewController : UITableViewController
+
+@property (nonatomic, copy) NSArray *availableServices;
 
 @end

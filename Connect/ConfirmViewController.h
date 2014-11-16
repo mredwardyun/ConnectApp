@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConfirmViewController : UIViewController
+@interface ConfirmViewController : UITableViewController
 
 @property (nonatomic) NSArray *requestedNetworks;
 

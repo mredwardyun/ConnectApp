@@ -17,17 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"realname"];
 	NSString *fb = [[NSUserDefaults standardUserDefaults] objectForKey:@"fbusername"];
 	NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:@"phonenumber"];
 	NSString *twitter = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterID"];
-	NSString *uuid = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
-	self.label.text = [NSString stringWithFormat:@"Facebook: %@\nPhone: %@\nTwitter: %@\nUUID: %@", fb, phone, twitter, uuid];
-	
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	NSString *yo = [[NSUserDefaults standardUserDefaults] objectForKey:@"YoID"];
+	self.label.text = [NSString stringWithFormat:@"Name: %@\nFacebook: %@\n\nPhone: %@\nTwitter: %@\nYo: %@", name, fb, phone, twitter, yo];
 }
 
 @end

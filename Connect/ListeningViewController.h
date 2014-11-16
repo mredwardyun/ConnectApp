@@ -8,6 +8,6 @@
 
 #import "PageContentViewController.h"
 
-@interface MainPageContentViewController : PageContentViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface ListeningViewController : PageContentViewController
 
 @end

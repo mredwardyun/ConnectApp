@@ -8,30 +8,40 @@
 
 #import "BroadcastingViewController.h"
 
-@interface BroadcastingViewController ()
-
-@end
-
 @implementation BroadcastingViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)broadcastMessage {
+	NSMutableString *messageToBroadcast = [[NSMutableString alloc] init];
+	NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"realname"];
+	NSString *fb = [[NSUserDefaults standardUserDefaults] objectForKey:@"fbusername"];
+	NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:@"phonenumber"];
+	NSString *twitter = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterID"];
+	NSString *yo = [[NSUserDefaults standardUserDefaults] objectForKey:@"YoID"];
+	if (name) {
+		[messageToBroadcast appendString:[NSString stringWithFormat:@"NAME:%@\n", name]];
+	}
+	if (fb) {
+		[messageToBroadcast appendString:[NSString stringWithFormat:@"FB:%@\n", fb]];
+	}
+	if (phone) {
+		[messageToBroadcast appendString:@"PHONE"];
+	}
+	if (twitter) {
+		[messageToBroadcast appendString:@"TWITTER\n"];
+	}
+	if (yo) {
+		[messageToBroadcast appendString:@"YO\n"];
+	}
+	
+	// broadcast this message
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)listenForRequests {
+	
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+	
 }
-*/
 
 @end

@@ -52,16 +52,10 @@
 					 NSLog(@"Dictionary %@", result);
 					 NSString *facebookUsername = [result objectForKey:@"id"];
 					 NSString *realName = [result objectForKey:@"name"];
-					 
 					 [[NSUserDefaults standardUserDefaults] setObject:facebookUsername forKey:@"fbusername"];
 					 [[NSUserDefaults standardUserDefaults] setObject:realName forKey:@"realname"];
-					 
-					 NSLog(@"FB ID %@, real name %@", facebookUsername, realName);
-					 [user setObject:facebookUsername forKey:@"fbusername"];
-					 [user setObject:realName forKey:@"realName"];
-					 [user saveEventually];
 				 }
-				 }];
+			 }];
 			[self fbDidLogin:YES];
 			}
 	}];
@@ -79,11 +73,6 @@
 								   delegate:nil
 						  cancelButtonTitle:@"Ok"
 						  otherButtonTitles:nil] show];
-		
-	} else {
-		NSString *UUID = [[NSUUID UUID] UUIDString];
-		[[PFUser currentUser] setObject:UUID forKey:@"UUID"];
-		NSLog(@"UUID %@", UUID);
 	}
 }
 
@@ -113,8 +102,6 @@
                     NSString *twitterID = [results objectForKey:@"id"];
                     NSLog(@"%@", twitterID);
 					[[NSUserDefaults standardUserDefaults] setObject:twitterID forKey:@"twitterID"];
-                    [currentUser setObject:twitterID forKey:@"TwitterID"];
-                    [currentUser saveInBackground];
                 } else {
                     NSLog(@"%@", error);
                 }
@@ -139,8 +126,6 @@
                 NSString *twitterID = [results objectForKey:@"id"];
                 NSLog(@"%@", twitterID);
 				[[NSUserDefaults standardUserDefaults] setObject:twitterID forKey:@"twitterID"];
-                [user setObject:twitterID forKey:@"TwitterID"];
-                [user saveInBackground];
             } else {
                 NSLog(@"User logged in with Twitter!");
                 NSURL *verify = [NSURL URLWithString:@"https://api.twitter.com/1.1/account/verify_credentials.json"];
@@ -155,8 +140,6 @@
                 NSString *twitterID = [results objectForKey:@"id"];
                 NSLog(@"%@", twitterID);
 				[[NSUserDefaults standardUserDefaults] setObject:twitterID forKey:@"twitterID"];
-                [user setObject:twitterID forKey:@"TwitterID"];
-                [user saveInBackground];
 
             }
         }];

@@ -9,9 +9,9 @@
 #import "ContainerViewController.h"
 #import "PageContentViewController.h"
 #import "SettingsViewController.h"
-#import "MainPageContentViewController.h"
+#import "BroadcastingViewController.h"
 
-static NSInteger const kMaxNumberOfViewControllers = 3;
+static NSInteger const kMaxNumberOfViewControllers = 2;
 
 @interface ContainerViewController ()
 
@@ -63,31 +63,11 @@ static NSInteger const kMaxNumberOfViewControllers = 3;
 		return settingsViewController;
 	}
 	if (index == 1) {
-		MainPageContentViewController *mainPageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainPageViewController"];
-		mainPageContentViewController.pageIndex = 1;
-		return mainPageContentViewController;
+		BroadcastingViewController *broadcastingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BroadcastingViewController"];
+		broadcastingViewController.pageIndex = 1;
+		return broadcastingViewController;
 	}
-	
-	PageContentViewController *pageContentViewController = [[PageContentViewController alloc] init];
-	pageContentViewController.pageIndex = index;
-	
-	UILabel *label = [[UILabel alloc] initWithFrame:pageContentViewController.view.bounds];
-	label.backgroundColor = [UIColor whiteColor];
-	label.text = [NSString stringWithFormat:@"View controller %lu", index];
-	label.textAlignment = NSTextAlignmentCenter;
-	[pageContentViewController.view addSubview:label];
-	
-	return pageContentViewController;
-}
-
-- (void)displayModalViewController {
-	PageContentViewController *modalViewController = [[PageContentViewController alloc] init];
-	UILabel *label = [[UILabel alloc] initWithFrame:modalViewController.view.bounds];
-	label.backgroundColor = [UIColor greenColor];
-	label.text = @"Modal view controller";
-	label.textAlignment = NSTextAlignmentCenter;
-	[modalViewController.view addSubview:label];
-	[self.navigationController presentViewController:modalViewController animated:YES completion:nil];
+	return nil;
 }
 
 @end

@@ -24,17 +24,6 @@
     [self.phoneNumberTextField becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-/*
-- (BOOL)textFieldShouldReturn:(UITextField *)textField //resign first responder for textfield
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    return YES;
-}
-*/
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSString* totalString = [NSString stringWithFormat:@"%@%@",textField.text,string];
 
@@ -74,10 +63,8 @@
     if (simpleNumber.length == 10 && deleteLastChar == NO) {
         PFUser *currentUser = [PFUser currentUser];
         if (currentUser) {
-            [currentUser setObject:simpleNumber forKey:@"phoneNumber"];
 			[[NSUserDefaults standardUserDefaults] setObject:simpleNumber forKey:@"phonenumber"];
             NSLog(@"%@",simpleNumber);
-			[currentUser saveEventually];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
@@ -97,15 +84,5 @@
                                                                     range:NSMakeRange(0, [simpleNumber length])];
     return simpleNumber;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
