@@ -10,6 +10,6 @@
 
 @interface ConfirmViewController : UITableViewController
 
-@property (nonatomic) NSArray *requestedNetworks;
+@property (nonatomic) NSDictionary *requestedServicesWithInfo;
 
 @end

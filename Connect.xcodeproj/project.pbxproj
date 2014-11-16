@@ -39,7 +39,6 @@
 		9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A268BD51A172DBA004F23D5 /* PageContentViewController.m */; };
 		9A292CA61A181F4D00450D3C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A292CA51A181F4D00450D3C /* SettingsViewController.m */; };
 		9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A52581C1A17A40B00945A37 /* Storyboard.storyboard */; };
-		9A5258201A17A53800945A37 /* ListeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52581F1A17A53800945A37 /* ListeningViewController.m */; };
 		9A6E69E61A18261400FD3671 /* YO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69E51A18261400FD3671 /* YO.m */; };
 		9A6E69E91A1848FD00FD3671 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69E81A1848FD00FD3671 /* ServicesViewController.m */; };
 		9A6E69EC1A1849F200FD3671 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E69EB1A1849F200FD3671 /* ConfirmViewController.m */; };
@@ -476,12 +475,10 @@
 				5A25182D1A170F1600FB15D9 /* ContainerViewController.m in Sources */,
 				9A76BC7C1A17ACDD005988BF /* FirstLaunchViewController.m in Sources */,
 				9A6E69E61A18261400FD3671 /* YO.m in Sources */,
-				9A5258201A17A53800945A37 /* MainPageContentViewController.m in Sources */,
 				5AAB18E61A1877B500088E72 /* UINavigationBar+FlatUI.m in Sources */,
 				5AAB18E51A1877B500088E72 /* UIImage+FlatUI.m in Sources */,
 				5AAB18ED1A1877B500088E72 /* UIToolbar+FlatUI.m in Sources */,
 				5AAB18E91A1877B500088E72 /* UISlider+FlatUI.m in Sources */,
-				9A5258201A17A53800945A37 /* ListeningViewController.m in Sources */,
 				9A6E69EF1A184A6400FD3671 /* AddServicesHelper.m in Sources */,
 				5AAB18E41A1877B500088E72 /* UIFont+FlatUI.m in Sources */,
 			);

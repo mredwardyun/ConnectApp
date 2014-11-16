@@ -40,20 +40,16 @@
 	NSString *phone = [[NSUserDefaults standardUserDefaults] objectForKey:@"phonenumber"];
 	NSString *twitter = [[NSUserDefaults standardUserDefaults] objectForKey:@"twitterID"];
 	NSString *yo = [[NSUserDefaults standardUserDefaults] objectForKey:@"YoID"];
-	if (name) {
-		[stringToSend appendString:[NSString stringWithFormat:@"NAME:%@\n", name]];
+	[stringToSend appendString:[NSString stringWithFormat:@"NAME:%@\n", name]];
+	[stringToSend appendString:[NSString stringWithFormat:@"FB:%@\n", fb]];
+	if (phone && self.phoneSwitch.on) {
+		[stringToSend appendString:[NSString stringWithFormat:@"PHONE:%@\n", phone]];
 	}
-	if (fb) {
-		[stringToSend appendString:[NSString stringWithFormat:@"FB:%@\n", fb]];
+	if (twitter && self.twitterSwitch.on) {
+		[stringToSend appendString:[NSString stringWithFormat:@"TWITTER:%@\n", twitter]];
 	}
-	if (phone) {
-		[stringToSend appendString:@"PHONE"];
-	}
-	if (twitter) {
-		[stringToSend appendString:@"TWITTER\n"];
-	}
-	if (yo) {
-		[stringToSend appendString:@"YO\n"];
+	if (yo && self.yoSwitch.on) {
+		[stringToSend appendString:[NSString stringWithFormat:@"YO:%@\n", yo]];
 	}
 }
 
