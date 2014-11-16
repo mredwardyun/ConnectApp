@@ -19,7 +19,7 @@
 		9A268BD61A172DBA004F23D5 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A268BD51A172DBA004F23D5 /* PageContentViewController.m */; };
 		9A292CA61A181F4D00450D3C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A292CA51A181F4D00450D3C /* SettingsViewController.m */; };
 		9A52581D1A17A40B00945A37 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A52581C1A17A40B00945A37 /* Storyboard.storyboard */; };
-		9A5258201A17A53800945A37 /* CenterPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */; };
+		9A5258201A17A53800945A37 /* MainPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A52581F1A17A53800945A37 /* MainPageContentViewController.m */; };
 		9A76BC7C1A17ACDD005988BF /* FirstLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */; };
 		9A76BC7E1A17BA1B005988BF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A76BC7D1A17BA1B005988BF /* FacebookSDK.framework */; };
 		9A76BC831A17C156005988BF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A76BC811A17C156005988BF /* Parse.framework */; };
@@ -69,8 +69,8 @@
 		9A292CA41A181F4D00450D3C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9A292CA51A181F4D00450D3C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9A52581C1A17A40B00945A37 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		9A52581E1A17A53800945A37 /* CenterPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterPageContentViewController.h; sourceTree = "<group>"; };
-		9A52581F1A17A53800945A37 /* CenterPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterPageContentViewController.m; sourceTree = "<group>"; };
+		9A52581E1A17A53800945A37 /* MainPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageContentViewController.h; sourceTree = "<group>"; };
+		9A52581F1A17A53800945A37 /* MainPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageContentViewController.m; sourceTree = "<group>"; };
 		9A76BC7A1A17ACDD005988BF /* FirstLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLaunchViewController.h; sourceTree = "<group>"; };
 		9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstLaunchViewController.m; sourceTree = "<group>"; };
 		9A76BC7D1A17BA1B005988BF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -174,6 +174,12 @@
 				9A76BC7B1A17ACDD005988BF /* FirstLaunchViewController.m */,
 				5A2518A91A17CFC500FB15D9 /* PhoneNumberViewController.h */,
 				5A2518AA1A17CFC500FB15D9 /* PhoneNumberViewController.m */,
+				5A25182B1A170F1600FB15D9 /* ContainerViewController.h */,
+				5A25182C1A170F1600FB15D9 /* ContainerViewController.m */,
+				9A268BD41A172DBA004F23D5 /* PageContentViewController.h */,
+				9A268BD51A172DBA004F23D5 /* PageContentViewController.m */,
+				9A52581E1A17A53800945A37 /* MainPageContentViewController.h */,
+				9A52581F1A17A53800945A37 /* MainPageContentViewController.m */,
 				9A52581C1A17A40B00945A37 /* Storyboard.storyboard */,
 				5A2518311A170F1600FB15D9 /* Images.xcassets */,
 				5A2518331A170F1600FB15D9 /* LaunchScreen.xib */,
@@ -316,7 +322,7 @@
 				5A2518AB1A17CFC500FB15D9 /* PhoneNumberViewController.m in Sources */,
 				5A25182D1A170F1600FB15D9 /* ContainerViewController.m in Sources */,
 				9A76BC7C1A17ACDD005988BF /* FirstLaunchViewController.m in Sources */,
-				9A5258201A17A53800945A37 /* CenterPageContentViewController.m in Sources */,
+				9A5258201A17A53800945A37 /* MainPageContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

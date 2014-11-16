@@ -75,6 +75,7 @@
         PFUser *currentUser = [PFUser currentUser];
         if (currentUser) {
             [currentUser setObject:simpleNumber forKey:@"phoneNumber"];
+			[[NSUserDefaults standardUserDefaults] setObject:simpleNumber forKey:@"phonenumber"];
             NSLog(@"%@",simpleNumber);
 			[currentUser saveEventually];
             [self dismissViewControllerAnimated:YES completion:nil];

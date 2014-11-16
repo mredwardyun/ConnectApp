@@ -14,6 +14,7 @@
 @interface MainPageContentViewController ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @property (nonatomic) NSMutableArray *nearbyContacts;
 
 @end

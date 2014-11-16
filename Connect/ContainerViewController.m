@@ -8,8 +8,8 @@
 
 #import "ContainerViewController.h"
 #import "PageContentViewController.h"
-#import "CenterPageContentViewController.h"
 #import "SettingsViewController.h"
+#import "MainPageContentViewController.h"
 
 static NSInteger const kMaxNumberOfViewControllers = 3;
 
@@ -23,7 +23,6 @@ static NSInteger const kMaxNumberOfViewControllers = 3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
 	self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 	
 	self.pageController.dataSource = self;
@@ -64,9 +63,9 @@ static NSInteger const kMaxNumberOfViewControllers = 3;
 		return settingsViewController;
 	}
 	if (index == 1) {
-		CenterPageContentViewController *centerPageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CenterPageViewController"];
-		centerPageContentViewController.pageIndex = 1;
-		return centerPageContentViewController;
+		MainPageContentViewController *mainPageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainPageViewController"];
+		mainPageContentViewController.pageIndex = 1;
+		return mainPageContentViewController;
 	}
 	
 	PageContentViewController *pageContentViewController = [[PageContentViewController alloc] init];
@@ -89,14 +88,6 @@ static NSInteger const kMaxNumberOfViewControllers = 3;
 	label.textAlignment = NSTextAlignmentCenter;
 	[modalViewController.view addSubview:label];
 	[self.navigationController presentViewController:modalViewController animated:YES completion:nil];
-}
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-	return kMaxNumberOfViewControllers;
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-	return 1;
 }
 
 @end

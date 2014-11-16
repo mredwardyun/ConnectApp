@@ -52,6 +52,10 @@
 				 if (!error) {
 					 NSString *facebookUsername = [result objectForKey:@"id"];
 					 NSString *realName = [result objectForKey:@"name"];
+					 
+					 [[NSUserDefaults standardUserDefaults] setObject:facebookUsername forKey:@"fbusername"];
+					 [[NSUserDefaults standardUserDefaults] setObject:realName forKey:@"realname"];
+					 
 					 NSLog(@"FB ID %@, real name %@", facebookUsername, realName);
 					 [user setObject:facebookUsername forKey:@"fbusername"];
 					 [user setObject:realName forKey:@"realName"];
