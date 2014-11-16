@@ -9,6 +9,7 @@
 #import "ContainerViewController.h"
 #import "PageContentViewController.h"
 #import "CenterPageContentViewController.h"
+#import "SettingsViewController.h"
 
 static NSInteger const kMaxNumberOfViewControllers = 3;
 
@@ -57,6 +58,11 @@ static NSInteger const kMaxNumberOfViewControllers = 3;
 }
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index {
+	if (index == 0) {
+		SettingsViewController *settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+		settingsViewController.pageIndex = 0;
+		return settingsViewController;
+	}
 	if (index == 1) {
 		CenterPageContentViewController *centerPageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CenterPageViewController"];
 		centerPageContentViewController.pageIndex = 1;

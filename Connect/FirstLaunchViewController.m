@@ -76,6 +76,10 @@
 						  cancelButtonTitle:@"Ok"
 						  otherButtonTitles:nil] show];
 		
+	} else {
+		NSString *UUID = [[NSUUID UUID] UUIDString];
+		[[PFUser currentUser] setObject:UUID forKey:@"UUID"];
+		NSLog(@"UUID %@", UUID);
 	}
 }
 
@@ -88,7 +92,7 @@
 
 - (IBAction)twitterLogin:(id)sender {
     PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
+//    if (currentUser) {
         if (![PFTwitterUtils isLinkedWithUser:currentUser]) {
             [PFTwitterUtils linkUser:currentUser block:^(BOOL succeeded, NSError *error) {
                 if ([PFTwitterUtils isLinkedWithUser:currentUser]) {
@@ -96,19 +100,19 @@
                 }
             }];
         }
-    } else {
-        [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
-            if (!user) {
-                NSLog(@"Uh oh. The user cancelled the Twitter login.");
-                return;
-            } else if (user.isNew) {
-                NSLog(@"User signed up and logged in with Twitter!");
-            } else {
-                NSLog(@"User logged in with Twitter!");
-            }     
-        }];
-    }
-    
+//    } else {
+//        [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+//            if (!user) {
+//                NSLog(@"Uh oh. The user cancelled the Twitter login.");
+//                return;
+//            } else if (user.isNew) {
+//                NSLog(@"User signed up and logged in with Twitter!");
+//            } else {
+//                NSLog(@"User logged in with Twitter!");
+//            }     
+//        }];
+//    }
+	
     NSURL *verify = [NSURL URLWithString:@"https://api.twitter.com/1.1/account/verify_credentials.json"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:verify];
     [[PFTwitterUtils twitter] signRequest:request];
@@ -117,9 +121,12 @@
     NSData *data = [NSURLConnection sendSynchronousRequest:request
                                          returningResponse:&response
                                                      error:&error];
+	
     NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSString *twitterID = [results objectForKey:@"id"];
-    [currentUser setObject:twitterID forKey:@"TwitterID"];
+    [currentUser setObject:twitterID forKey:@"twitterID"];
+	NSLog(@"Twitter ID %@", twitterID);
+	[[NSUserDefaults standardUserDefaults] setObject:twitterID forKey:@"twitterid"];
     [currentUser saveInBackground];
 }
 

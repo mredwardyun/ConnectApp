@@ -68,6 +68,35 @@
             </objects>
             <point key="canvasLocation" x="-249" y="1172"/>
         </scene>
+        <!--SettingsViewController-->
+        <scene sceneID="WwR-0A-42g">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="MI6-TB-8Ms" userLabel="SettingsViewController" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pTb-IO-ZNx"/>
+                        <viewControllerLayoutGuide type="bottom" id="T9R-VU-Tji"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BkH-py-ZOf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niy-Ss-YbA">
+                                <rect key="frame" x="78" y="159" width="217" height="268"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="niy-Ss-YbA" id="sgl-BX-g9f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIB-FX-Sjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="-301"/>
+        </scene>
         <!--Center Page Content View Controller-->
         <scene sceneID="bAo-gb-1dP">
             <objects>

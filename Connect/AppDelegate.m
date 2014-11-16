@@ -39,7 +39,10 @@
                                                          UIRemoteNotificationTypeAlert |
                                                          UIRemoteNotificationTypeSound)];
     }
-
+	
+	NSString *UUID = [[NSUUID UUID] UUIDString];
+	[[NSUserDefaults standardUserDefaults] setObject:UUID forKey:@"UUID"];
+	
 	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 	
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
