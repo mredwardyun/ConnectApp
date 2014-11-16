@@ -9,6 +9,7 @@
 #import "ConfirmViewController.h"
 
 @interface ConfirmViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
