@@ -72,6 +72,8 @@
 		[stringToSend appendString:[NSString stringWithFormat:@"YO:%@\n", yo]];
 		[self.confirmedServicesWithInfo setObject:self.requestedServicesWithInfo[@"YO"] forKey:@"YO"];
 	}
+	NSLog(@"sendconfirmation stringToSend %@", stringToSend);
+	NSLog(@"sendconfirmation confirmedServicesWithInfo %@", self.confirmedServicesWithInfo);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

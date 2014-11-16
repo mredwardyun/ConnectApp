@@ -76,19 +76,23 @@
 		[NSURLConnection sendSynchronousRequest:request
 											 returningResponse:&response
 														 error:&error];
+		NSLog(@"Think I added twitter");
 	}
 	if (self.confirmedServicesWithInfo[@"YO"]) {
 		[YO sendYOToIndividualUser:self.confirmedServicesWithInfo[@"YO"]];
+		NSLog(@"Think I added Yo");
 	}
 	if (self.confirmedServicesWithInfo[@"FBMANUAL"]) {
 		NSString *urlString = [NSString stringWithFormat:@"fb://profile/%@", self.confirmedServicesWithInfo[@"FBMANUAL"]];
 		NSURL *url = [NSURL URLWithString:urlString];
 		[[UIApplication sharedApplication] openURL:url];
+		NSLog(@"Think I added FBManual");
 	}
 	else if (self.confirmedServicesWithInfo[@"FB"]) {
 		NSString *urlString = [NSString stringWithFormat:@"http://facebook.com/%@", self.confirmedServicesWithInfo[@"FB"]];
 		NSURL *url = [NSURL URLWithString:urlString];
 		[[UIApplication sharedApplication] openURL:url];
+		NSLog(@"Think I added FB auto");
 	}
 }
 
